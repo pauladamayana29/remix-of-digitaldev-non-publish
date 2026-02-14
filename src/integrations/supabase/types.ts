@@ -980,6 +980,87 @@ export type Database = {
           },
         ]
       }
+      order_leads: {
+        Row: {
+          add_ons: Json | null
+          amount_idr: number | null
+          business_name: string | null
+          city: string | null
+          created_at: string
+          domain: string | null
+          email: string | null
+          first_name: string | null
+          flow_type: string
+          id: string
+          last_name: string | null
+          package_id: string | null
+          package_name: string | null
+          phone: string | null
+          promo_code: string | null
+          province_code: string | null
+          province_name: string | null
+          status: string
+          subscription_add_ons: Json | null
+          subscription_years: number | null
+          template_id: string | null
+          template_name: string | null
+          user_id: string | null
+          xendit_invoice_url: string | null
+        }
+        Insert: {
+          add_ons?: Json | null
+          amount_idr?: number | null
+          business_name?: string | null
+          city?: string | null
+          created_at?: string
+          domain?: string | null
+          email?: string | null
+          first_name?: string | null
+          flow_type?: string
+          id?: string
+          last_name?: string | null
+          package_id?: string | null
+          package_name?: string | null
+          phone?: string | null
+          promo_code?: string | null
+          province_code?: string | null
+          province_name?: string | null
+          status?: string
+          subscription_add_ons?: Json | null
+          subscription_years?: number | null
+          template_id?: string | null
+          template_name?: string | null
+          user_id?: string | null
+          xendit_invoice_url?: string | null
+        }
+        Update: {
+          add_ons?: Json | null
+          amount_idr?: number | null
+          business_name?: string | null
+          city?: string | null
+          created_at?: string
+          domain?: string | null
+          email?: string | null
+          first_name?: string | null
+          flow_type?: string
+          id?: string
+          last_name?: string | null
+          package_id?: string | null
+          package_name?: string | null
+          phone?: string | null
+          promo_code?: string | null
+          province_code?: string | null
+          province_name?: string | null
+          status?: string
+          subscription_add_ons?: Json | null
+          subscription_years?: number | null
+          template_id?: string | null
+          template_name?: string | null
+          user_id?: string | null
+          xendit_invoice_url?: string | null
+        }
+        Relationships: []
+      }
       order_promos: {
         Row: {
           code: string
