@@ -33,6 +33,7 @@ import SuperAdminSubscriptions from "./super-admin/Subscriptions";
 import SuperAdminMyAccount from "./super-admin/MyAccount";
 import SuperAdminPayments from "./super-admin/Payments";
 import SuperAdminAuditLogs from "./super-admin/AuditLogs";
+import SuperAdminFollowUp from "./super-admin/FollowUp";
 
 function LoadingScreen() {
   return (
@@ -164,7 +165,7 @@ export default function SuperAdminDashboard() {
 
               <Route path="promotions" element={<SuperAdminPromotions />} />
               <Route path="access-control" element={<SuperAdminAccessControl />} />
-              <Route path="follow-up" element={<SuperAdminAuditLogs />} />
+              <Route path="follow-up" element={<SuperAdminFollowUp />} />
               <Route path="audit-logs" element={<Navigate to="/dashboard/super-admin/follow-up" replace />} />
               <Route path="system-settings" element={<SuperAdminPlaceholder title="System Settings" />} />
               <Route path="reports" element={<SuperAdminPlaceholder title="Reports" />} />

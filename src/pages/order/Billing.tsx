@@ -17,6 +17,7 @@ import { useI18n } from "@/hooks/useI18n";
 import { usePackageDurations } from "@/hooks/usePackageDurations";
 import { computeDiscountedTotal } from "@/lib/packageDurations";
 import { createXenditInvoice } from "@/lib/orderPayments";
+import { saveOrderLead } from "@/lib/saveOrderLead";
 import { supabase } from "@/integrations/supabase/client";
 
 function formatIdr(value: number) {
@@ -167,6 +168,7 @@ export default function Billing() {
     setPaying(true);
     try {
       await logOrderAudit();
+      await saveOrderLead(state, "marketing", totalAfterPromoIdr);
 
       const res = await createXenditInvoice({
         amount_idr: totalAfterPromoIdr,

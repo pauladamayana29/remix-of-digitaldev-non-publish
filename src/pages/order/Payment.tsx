@@ -26,6 +26,7 @@ function isMonthlyPackageName(name: string | null) {
   return n.includes("full digital marketing") || n.includes("blog + social media") || n.includes("blog+social media");
 }
 import { createXenditInvoice } from "@/lib/orderPayments";
+import { saveOrderLead } from "@/lib/saveOrderLead";
 
 function formatIdr(value: number) {
   return `Rp ${Math.round(value).toLocaleString("id-ID", { maximumFractionDigits: 0 })}`;
@@ -412,6 +413,7 @@ export default function Payment() {
     setPaying(true);
     try {
       await logOrderAudit();
+      await saveOrderLead(state, "website", totalAfterPromoIdr);
 
       const res = await createXenditInvoice({
         amount_idr: totalAfterPromoIdr,
